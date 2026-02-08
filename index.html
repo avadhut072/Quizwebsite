@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Web Development Quiz — 30 Questions</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light">
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <h1>🎯 Web Development Quiz</h1>
+                <p class="subtitle">30 Questions • HTML (10) • CSS (10) • JavaScript (10)</p>
+            </div>
+
+            <div class="header-controls">
+                <button id="themeToggle" class="control-btn">🌙 Dark</button>
+                <button id="startBtn" class="control-btn primary">▶️ Start Quiz</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="preStart" class="prestart">
+                <p>Press <strong>Start Quiz</strong> to begin the timer and enable answering. Questions are fixed in order (1 → 30).</p>
+            </div>
+
+            <div id="quizArea" class="quiz-area" aria-hidden="true">
+                <div class="timer-container" id="timerWrap">
+                    <div class="timer-label">⏱️ Time Remaining</div>
+                    <div class="timer" id="timer">30:00</div>
+                </div>
+
+                <div class="progress-block">
+                    <div class="progress-bar" id="progressBarWrap">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">0/30 Questions Answered</div>
+                </div>
+
+                <div class="category-tabs" id="tabs">
+                    <div class="tab active" data-category="all">All Questions (30)</div>
+                    <div class="tab html" data-category="html">📄 HTML (10)</div>
+                    <div class="tab css" data-category="css">🎨 CSS (10)</div>
+                    <div class="tab js" data-category="js">⚡ JavaScript (10)</div>
+                </div>
+
+                <form id="quizForm" novalidate>
+                    <div id="questionsContainer" class="questions-container"></div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn" class="submit-btn">🚀 Submit Quiz</button>
+                    </div>
+                </form>
+            </div>
+
+            <section id="resultContainer" class="result-container" aria-hidden="true">
+                <h2>🎉 Quiz Complete!</h2>
+                <div class="score" id="scoreDisplay">0/30</div>
+                <div class="result-message" id="resultMessage"></div>
+
+                <div class="category-breakdown">
+                    <div class="category-score">
+                        <h3>📄 HTML</h3>
+                        <div class="score-value" id="htmlScore">0/10</div>
+                    </div>
+                    <div class="category-score">
+                        <h3>🎨 CSS</h3>
+                        <div class="score-value" id="cssScore">0/10</div>
+                    </div>
+                    <div class="category-score">
+                        <h3>⚡ JavaScript</h3>
+                        <div class="score-value" id="jsScore">0/10</div>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button id="tryAgainBtn" class="restart-btn">🔄 Take Quiz Again</button>
+                    <button id="clearScoreBtn" class="restart-btn">🗑️ Clear Saved Score</button>
+                </div>
+                <div id="lastSaved" class="last-saved"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
